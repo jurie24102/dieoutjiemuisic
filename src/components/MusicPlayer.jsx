@@ -31,72 +31,72 @@ const confirmDownload = () => {
     {
       url: '/Kani-slaapie.mp3',
       title: 'Kani slaapie - Dieoutjiemusic',
-      cover: '/Dieoutjiemuisic.png', // Add album cover URL here
+      cover: '/Dieoutjiemuisic.png',
     },
     {
       url: '/song.mp3',
       title: 'Myne - Dieoutjiemusic',
-      cover: '/Dieoutjiemuisic.png', // Add album cover URL here
+      cover: '/Dieoutjiemuisic.png',
     },
     {
       url: '/Rugsteekers.mp3',
       title: 'Rugsteekers - Dieoutjiemusic',
-      cover: '/Dieoutjiemuisic.png', // Add album cover URL here
+      cover: '/Dieoutjiemuisic.png',
     },
     {
       url: '/Bozza.mp3',
       title: 'Bozza - Dieoutjiemusic',
-      cover: '/Dieoutjiemuisic.png', // Add album cover URL here
+      cover: '/Dieoutjiemuisic.png',
     },
     {
       url: '/Blomme.mp3',
       title: 'Blomme - Dieoutjiemusic',
-      cover: '/Dieoutjiemuisic.png', // Add album cover URL here
+      cover: '/Dieoutjiemuisic.png',
     },
     {
       url: '/DangerousGirl.mp3',
       title: 'Dangerous Girl - Dieoutjiemusic',
-      cover: '/Dieoutjiemuisic.png', // Add album cover URL here
+      cover: '/Dieoutjiemuisic.png',
     },
     {
       url: '/HOE-LYKIT.mp3',
       title: 'HOE LYKIT - Dieoutjiemusic',
-      cover: '/Dieoutjiemuisic.png', // Add album cover URL here
+      cover: '/Dieoutjiemuisic.png',
     },
     {
       url: '/Hoelank-nog.mp3',
       title: 'Hoelank nog - Dieoutjiemusic',
-      cover: '/Dieoutjiemuisic.png', // Add album cover URL here
+      cover: '/Dieoutjiemuisic.png',
     },
     {
       url: '/KEN-JO-WAARDE.mp3',
       title: 'KEN JO WAARDE - Dieoutjiemusic',
-      cover: '/Dieoutjiemuisic.png', // Add album cover URL here
+      cover: '/Dieoutjiemuisic.png',
     },
     {
       url: '/kroon.mp3',
       title: 'kroon - Dieoutjiemusic',
-      cover: '/Dieoutjiemuisic.png', // Add album cover URL here
+      cover: '/Dieoutjiemuisic.png',
     },
     {
       url: '/LEWE-CHANGE.mp3',
       title: 'LEWE CHANGE - Dieoutjiemusic',
-      cover: '/Dieoutjiemuisic.png', // Add album cover URL here
+      cover: '/Dieoutjiemuisic.png',
     },
     {
       url: '/Loyalty.mp3',
       title: 'Loyalty - Dieoutjiemusic',
-      cover: '/Dieoutjiemuisic.png', // Add album cover URL here
+      cover: '/Dieoutjiemuisic.png',
     },
     {
       url: '/Vir-My,My.mp3',
       title: 'Vir My,My - Dieoutjiemusic',
-      cover: '/Dieoutjiemuisic.png', // Add album cover URL here
+      cover: '/Dieoutjiemuisic.png',
     },
     {
       url: '/Waardes.mp3',
       title: 'Waardes - Dieoutjiemusic',
-      cover: '/Dieoutjiemuisic.png', // Add album cover URL here
+      cover: '/Dieoutjiemuisic.png',
     },
     // Add more song objects here
   ];
