@@ -34,7 +34,7 @@ const confirmDownload = () => {
       cover: '/Dieoutjiemuisic.png',
     },
     {
-      url: '/song.mp3',
+      url: '/Myne.mp3',
       title: 'Myne - Dieoutjiemusic',
       cover: '/Dieoutjiemuisic.png',
     },
