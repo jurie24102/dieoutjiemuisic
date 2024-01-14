@@ -250,6 +250,7 @@ useEffect(() => {
     e.preventDefault(); 
     handleDownload(song.url, song.title); 
   }}
+  id={`song-${index}`}
   sx={{
     minWidth: 'auto',
     width: 50,
@@ -257,8 +258,12 @@ useEffect(() => {
     ml: 1,
     p: 0,
     color: 'pink',
-    backgroundColor: 'white',
+    bgcolor: currentSongIndex === index ? '#FFD600' : '#FF9900',
     border: '1px solid black',
+    // if hover make it white
+    '&:hover': {
+      backgroundColor: 'white',
+    },
   }}
 >
   <Image src="/download.svg" alt="Download" width={20} height={20} />
@@ -271,17 +276,36 @@ useEffect(() => {
       onClose={() => setOpenDialog(false)}
       aria-labelledby="alert-dialog-title"
       aria-describedby="alert-dialog-description"
+      sx={{
+        textAlign: 'center', 
+        '& .MuiDialog-paper': {
+          width: '400px',
+          borderRadius: '10px',
+          p: 2,
+        },
+    }}
     >
-      <DialogTitle id="alert-dialog-title">{"Download?"}</DialogTitle>
-      <DialogContent>
-        <DialogContentText id="alert-dialog-description">
-          {selectedSong?.title}
-        </DialogContentText>
-      </DialogContent>
-      <DialogActions>
+      <Typography
+      sx={{
+        mb: 2,
+        fontWeight: 700,
+      }}
+      >
+        Download Song?
+      </Typography>
+      <Typography
+      sx={{
+        mb: 2,
+        fontWeight: 100,
+        fontSize: 14,
+      }}
+      >
+        {selectedSong?.title}
+      </Typography>
+      <Box>
         <Button onClick={() => setOpenDialog(false)}>Cancel</Button>
         <Button onClick={confirmDownload} autoFocus>Download</Button>
-      </DialogActions>
+      </Box>
     </Dialog>
     </Container>
   );
