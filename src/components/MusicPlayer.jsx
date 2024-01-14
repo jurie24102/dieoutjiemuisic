@@ -256,6 +256,7 @@ useEffect(() => {
     width: 50,
     height: 50,
     ml: 1,
+    mr: 1,
     p: 0,
     color: 'pink',
     bgcolor: currentSongIndex === index ? '#FFD600' : '#FF9900',
