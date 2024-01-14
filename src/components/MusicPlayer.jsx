@@ -29,8 +29,13 @@ const confirmDownload = () => {
 
   const songs = [
     {
+      url: '/Kani-slaapie.mp3',
+      title: 'Kani slaapie - Dieoutjiemusic',
+      cover: '/Dieoutjiemuisic.png', // Add album cover URL here
+    },
+    {
       url: '/song.mp3',
-      title: 'New song ! - Dieoutjiemusic',
+      title: 'Myne - Dieoutjiemusic',
       cover: '/Dieoutjiemuisic.png', // Add album cover URL here
     },
     {
