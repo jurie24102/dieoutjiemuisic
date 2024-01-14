@@ -1,4 +1,3 @@
-import '@/styles/globals.css';
 import TopNav from '../components/TopNav';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Head from 'next/head';
@@ -7,7 +6,7 @@ const theme = createTheme();
 
 export default function App({ Component, pageProps }) {
   return (
-    <div>
+    <div style={{ backgroundColor: 'black', minHeight: '100vh' }}>
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />

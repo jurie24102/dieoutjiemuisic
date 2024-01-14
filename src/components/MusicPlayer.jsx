@@ -1,12 +1,31 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import { Box, Container, Typography } from '@mui/material';
+import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Button,
+  Container, Box, Typography
+ } from '@mui/material';
 
 const MusicPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
   const [progress, setProgress] = useState(0);
   const audioRef = useRef(null);
+  const [openDialog, setOpenDialog] = useState(false);
+const [selectedSong, setSelectedSong] = useState(null);
+
+const handleDownload = (url, title) => {
+  setSelectedSong({ url, title });
+  setOpenDialog(true);
+};
+
+const confirmDownload = () => {
+  const link = document.createElement('a');
+  link.href = selectedSong.url;
+  link.download = `${selectedSong.title}.mp3`;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  setOpenDialog(false);
+};
 
   const songs = [
     {
@@ -145,15 +164,6 @@ useEffect(() => {
     }
   }, [currentSongIndex]);
 
-const handleDownload = (url, title) => {
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `${title}.mp3`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   const handleSongClick = (songIndex) => {
   const isCurrentSong = currentSongIndex === songIndex;
   const audioElement = audioRef.current;
@@ -199,39 +209,80 @@ const handleDownload = (url, title) => {
         <Image src="/skip-next.svg" alt="next" width={20} height={20} onClick={skipForward}/>
       </Box>
       <Box sx={{ width: '100%', mt: 3, height: '400px', overflowY: 'auto' }}>
-        {songs.map((song, index) => (
-          <Box
-            key={index}
-            id={`song-${index}`} // Add an id to each song element
-            sx={{
-              padding: 1,
-              mt: 1.5,
-              bgcolor: currentSongIndex === index ? '#FFD600' : '#FF9900',
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-              cursor: 'pointer',
-            }}
-            onClick={() => handleSongClick(index)}
-          >
-            <Image src={song.cover} alt="Song Cover" width={40} height={40} />
-            <Typography
-              sx={{
-                ml: 2,
-                fontSize: 14,
-                fontWeight: currentSongIndex === index ? 700 : 400,
-                color: 'black',
-              }}
-            >
-              {song.title}
-            </Typography>
-            <Box sx={{ flexGrow: 1 }} />
-            <a href={song.url} download={`${song.title}.mp3`} onClick={(e) => { e.preventDefault(); handleDownload(song.url, song.title); }}>
-              <Image src="/download.svg" alt="Download" width={20} height={20} style={{ }} />
-            </a>
-          </Box>
-        ))}
-      </Box>
+      {songs.map((song, index) => (
+  <Box
+    key={index} // Add the key prop here
+    sx={{
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+      mt: 1.5,
+    }}
+  >
+    <Box
+      id={`song-${index}`} // Add an id to each song element
+      sx={{
+        padding: 1,
+        bgcolor: currentSongIndex === index ? '#FFD600' : '#FF9900',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        cursor: 'pointer',
+        flexGrow: 1,
+        width: '90%',
+      }}
+      onClick={() => handleSongClick(index)}
+    >
+      <Image src={song.cover} alt="Song Cover" width={40} height={40} />
+      <Typography
+        sx={{
+          ml: 2,
+          fontSize: 14,
+          fontWeight: currentSongIndex === index ? 700 : 400,
+          color: 'black',
+        }}
+      >
+        {song.title}
+      </Typography>
+    </Box>
+    <Button
+  onClick={(e) => { 
+    e.preventDefault(); 
+    handleDownload(song.url, song.title); 
+  }}
+  sx={{
+    minWidth: 'auto',
+    width: 50,
+    height: 50,
+    ml: 1,
+    p: 0,
+    color: 'pink',
+    backgroundColor: 'white',
+    border: '1px solid black',
+  }}
+>
+  <Image src="/download.svg" alt="Download" width={20} height={20} />
+</Button>
+  </Box>
+))}
+    </Box>
+      <Dialog
+      open={openDialog}
+      onClose={() => setOpenDialog(false)}
+      aria-labelledby="alert-dialog-title"
+      aria-describedby="alert-dialog-description"
+    >
+      <DialogTitle id="alert-dialog-title">{"Download?"}</DialogTitle>
+      <DialogContent>
+        <DialogContentText id="alert-dialog-description">
+          {selectedSong?.title}
+        </DialogContentText>
+      </DialogContent>
+      <DialogActions>
+        <Button onClick={() => setOpenDialog(false)}>Cancel</Button>
+        <Button onClick={confirmDownload} autoFocus>Download</Button>
+      </DialogActions>
+    </Dialog>
     </Container>
   );
 };
