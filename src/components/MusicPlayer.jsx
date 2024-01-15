@@ -186,6 +186,7 @@ useEffect(() => {
 };
 
   return (
+    
     <Container
       sx={{
         display: 'flex',
@@ -215,6 +216,7 @@ useEffect(() => {
       </Box>
       <Box sx={{ width: '100%', mt: 3, height: '400px', overflowY: 'auto' }}>
       {songs.map((song, index) => (
+        <>
   <Box
     key={index} // Add the key prop here
     sx={{
@@ -275,6 +277,25 @@ useEffect(() => {
   <Image src="/download.svg" alt="Download" width={20} height={20} />
 </Button>
   </Box>
+  <Box
+  sx={{
+    textAlign: 'center',
+    mt: 3,
+  
+  }}
+  >
+  <Typography
+        sx={{
+          ml: 2,
+          fontSize: 14,
+          color: 'white',
+        }}
+      >
+        Previous songs are being remastered and will be available soon.
+      </Typography>
+      </Box>
+      </>
+  
 ))}
     </Box>
       <Dialog
