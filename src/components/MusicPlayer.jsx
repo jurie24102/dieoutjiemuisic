@@ -277,7 +277,11 @@ useEffect(() => {
   <Image src="/download.svg" alt="Download" width={20} height={20} />
 </Button>
   </Box>
-  <Box
+  
+      </>
+  
+))}
+<Box
   sx={{
     textAlign: 'center',
     mt: 3,
@@ -287,6 +291,7 @@ useEffect(() => {
   <Typography
         sx={{
           ml: 2,
+          mb: 10,
           fontSize: 14,
           color: 'white',
         }}
@@ -294,9 +299,6 @@ useEffect(() => {
         Previous songs are being remastered and will be available soon.
       </Typography>
       </Box>
-      </>
-  
-))}
     </Box>
       <Dialog
       open={openDialog}
