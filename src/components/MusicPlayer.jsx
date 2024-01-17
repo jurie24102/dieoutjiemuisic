@@ -43,26 +43,26 @@ const confirmDownload = () => {
     //   title: 'Rugsteekers - Dieoutjiemusic',
     //   cover: '/Dieoutjiemuisic.png',
     // },
-    // {
-    //   url: '/Bozza.mp3',
-    //   title: 'Bozza - Dieoutjiemusic',
-    //   cover: '/Dieoutjiemuisic.png',
-    // },
-    // {
-    //   url: '/Blomme.mp3',
-    //   title: 'Blomme - Dieoutjiemusic',
-    //   cover: '/Dieoutjiemuisic.png',
-    // },
-    // {
-    //   url: '/DangerousGirl.mp3',
-    //   title: 'Dangerous Girl - Dieoutjiemusic',
-    //   cover: '/Dieoutjiemuisic.png',
-    // },
-    // {
-    //   url: '/HOE-LYKIT.mp3',
-    //   title: 'HOE LYKIT - Dieoutjiemusic',
-    //   cover: '/Dieoutjiemuisic.png',
-    // },
+    {
+      url: '/Bozza.mp3',
+      title: 'Bozza - Dieoutjiemusic',
+      cover: '/Dieoutjiemuisic.png',
+    },
+    {
+      url: '/Blomme.mp3',
+      title: 'Blomme - Dieoutjiemusic',
+      cover: '/Dieoutjiemuisic.png',
+    },
+    {
+      url: '/DangerousGirl.mp3',
+      title: 'Dangerous Girl - Dieoutjiemusic',
+      cover: '/Dieoutjiemuisic.png',
+    },
+    {
+      url: '/HOE-LYKIT.mp3',
+      title: 'HOE LYKIT - Dieoutjiemusic',
+      cover: '/Dieoutjiemuisic.png',
+    },
     // {
     //   url: '/Hoelank-nog.mp3',
     //   title: 'Hoelank nog - Dieoutjiemusic',
