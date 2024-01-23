@@ -51,6 +51,11 @@ const handleProgressBarClick = (event) => {
 };
 
   const songs = [
+    {
+      url: '/songs/Welkom-By-Sukses.mp3',
+      title: 'Welkom By Sukses - Dieoutjiemusic',
+      cover: '/Dieoutjiemuisic.png',
+    },
     // {
     //   url: '/songs/Kani-slaapie.mp3',
     //   title: 'Kani slaapie - Dieoutjiemusic',
@@ -76,11 +81,11 @@ const handleProgressBarClick = (event) => {
       title: 'Blomme - Dieoutjiemusic',
       cover: '/Dieoutjiemuisic.png',
     },
-    // {
-    //   url: '/songs/DangerousGirl.mp3',
-    //   title: 'Dangerous Girl - Dieoutjiemusic',
-    //   cover: '/Dieoutjiemuisic.png',
-    // },
+    {
+      url: '/songs/Dangerous-Girl.mp3',
+      title: 'Dangerous Girl - Dieoutjiemusic',
+      cover: '/Dieoutjiemuisic.png',
+    },
     {
       url: '/songs/HOE-LYKIT.mp3',
       title: 'HOE LYKIT - Dieoutjiemusic',
