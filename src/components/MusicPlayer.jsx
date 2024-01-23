@@ -52,6 +52,16 @@ const handleProgressBarClick = (event) => {
 
   const songs = [
     {
+      url: '/songs/Beautifull.mp3',
+      title: 'Beautifull - Dieoutjiemusic',
+      cover: '/Dieoutjiemuisic.png',
+    },
+    {
+      url: '/songs/SUKSESVOL.mp3',
+      title: 'SUKSESVOL - Dieoutjiemusic',
+      cover: '/Dieoutjiemuisic.png',
+    },
+    {
       url: '/songs/Welkom-By-Sukses.mp3',
       title: 'Welkom By Sukses - Dieoutjiemusic',
       cover: '/Dieoutjiemuisic.png',
