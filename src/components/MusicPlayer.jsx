@@ -53,7 +53,7 @@ const handleProgressBarClick = (event) => {
   const songs = [
     {
       url: '/songs/Venus.mp3',
-      title: 'Kani slaapie - Dieoutjiemusic',
+      title: 'Venus - Dieoutjiemusic',
       cover: '/Dieoutjiemuisic.png',
     },
     {
