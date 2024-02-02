@@ -351,16 +351,7 @@ useEffect(() => {
   
   }}
   >
-  <Typography
-        sx={{
-          ml: 2,
-          mb: 10,
-          fontSize: 14,
-          color: 'white',
-        }}
-      >
-        Previous songs are being remastered and will be available soon.
-      </Typography>
+  
       </Box>
     </Box>
       <Dialog
