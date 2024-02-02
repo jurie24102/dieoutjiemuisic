@@ -52,6 +52,11 @@ const handleProgressBarClick = (event) => {
 
   const songs = [
     {
+      url: '/songs/Venus.mp3',
+      title: 'Kani slaapie - Dieoutjiemusic',
+      cover: '/Dieoutjiemuisic.png',
+    },
+    {
       url: '/songs/Beautifull.mp3',
       title: 'Beautifull - Dieoutjiemusic',
       cover: '/Dieoutjiemuisic.png',
@@ -66,11 +71,6 @@ const handleProgressBarClick = (event) => {
       title: 'Welkom By Sukses - Dieoutjiemusic',
       cover: '/Dieoutjiemuisic.png',
     },
-    // {
-    //   url: '/songs/Kani-slaapie.mp3',
-    //   title: 'Kani slaapie - Dieoutjiemusic',
-    //   cover: '/Dieoutjiemuisic.png',
-    // },
     {
       url: '/songs/Myne.mp3',
       title: 'Myne - Dieoutjiemusic',
