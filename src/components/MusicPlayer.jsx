@@ -52,6 +52,26 @@ const handleProgressBarClick = (event) => {
 
   const songs = [
     {
+      url: '/songs/goeiemore.mp3',
+      title: 'goeiemore - Dieoutjiemusic',
+      cover: '/Dieoutjiemuisic.png',
+    },
+    {
+      url: '/songs/move-it.mp3',
+      title: 'move it - Dieoutjiemusic',
+      cover: '/Dieoutjiemuisic.png',
+    },
+    {
+      url: '/songs/Oulike-Girl.mp3',
+      title: 'Oulike Girl - Dieoutjiemusic',
+      cover: '/Dieoutjiemuisic.png',
+    },
+    {
+      url: '/songs/woelag.mp3',
+      title: 'woelag - Dieoutjiemusic',
+      cover: '/Dieoutjiemuisic.png',
+    },
+    {
       url: '/songs/Venus.mp3',
       title: 'Venus - Dieoutjiemusic',
       cover: '/Dieoutjiemuisic.png',
