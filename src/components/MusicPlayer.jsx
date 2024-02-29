@@ -271,17 +271,17 @@ useEffect(() => {
         
       }}
     >
-      <Box mt={5}>
+      <Box mt={3}>
         <Image src={songs[currentSongIndex].cover} alt="Album Cover" width={200} height={200} />
       </Box>
-      <Box mt={2}>{songs[currentSongIndex].title}</Box>
+      <Box>{songs[currentSongIndex].title}</Box>
       <Box
         sx={{
           display: 'flex',
           flexDirection: 'row',
           justifyContent: 'space-between',
           width: '70%',
-          mt: 3,
+          mt: 1,
           alignItems: 'center',
           maxWidth: 300,
         }}
@@ -290,10 +290,10 @@ useEffect(() => {
         <Image src={!isPlaying ? '/play.svg' : 'pause.svg'} alt="Play Icon" width={40} height={40} onClick={togglePlay}/>
         <Image src="/skip-next.svg" alt="next" width={20} height={20} onClick={skipForward}/>
       </Box>
-      <Box sx={{color: 'white'}} mt={4}>{songs[currentSongIndex].title}</Box>
+      <Box sx={{color: 'white'}} mt={3}>{songs[currentSongIndex].title}</Box>
       <ColorLinearProgress
         onClick={handleProgressBarClick}
-        sx={{ height: 10, width: {xs: '90%', md: '40%'}, borderRadius: 5, border: '1px solid orange', mt: 4}}
+        sx={{ height: 10, width: {xs: '90%', md: '40%'}, borderRadius: 5, border: '1px solid orange', mt: 2}}
         variant="determinate"
         value={(progress / songDuration) * 100}
       />
@@ -306,13 +306,13 @@ useEffect(() => {
       display: 'flex',
       flexDirection: 'row',
       alignItems: 'center',
-      mt: 1.5,
+      mt: 1,
     }}
   >
     <Box
       id={`song-${index}`} // Add an id to each song element
       sx={{
-        padding: 1,
+        padding: 0.5,
         bgcolor: currentSongIndex === index ? '#FFD600' : '#FF9900',
         display: 'flex',
         flexDirection: 'row',
@@ -323,7 +323,7 @@ useEffect(() => {
       }}
       onClick={() => handleSongClick(index)}
     >
-      <Image src={song.cover} alt="Song Cover" width={40} height={40} />
+      <Image src={song.cover} alt="Song Cover" width={30} height={30} />
       <Typography
         sx={{
           ml: 2,
@@ -343,8 +343,8 @@ useEffect(() => {
   id={`song-${index}`}
   sx={{
     minWidth: 'auto',
-    width: 50,
-    height: 50,
+    width: 40,
+    height: 40,
     ml: 1,
     mr: 1,
     p: 0,
