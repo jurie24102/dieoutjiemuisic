@@ -52,6 +52,11 @@ const handleProgressBarClick = (event) => {
 
   const songs = [
     {
+      url: '/songs/Nee-Dankie.mp3',
+      title: 'Nee Dankie - Dieoutjiemusic',
+      cover: '/Dieoutjiemuisic.png',
+    },
+    {
       url: '/songs/African-Queen.mp3',
       title: 'African Queen - Dieoutjiemusic',
       cover: '/Dieoutjiemuisic.png',
