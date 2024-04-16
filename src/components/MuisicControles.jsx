@@ -1,8 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Box } from '@mui/material';
-import { ColorLinearProgress } from './MusicPlayer'; // assuming this is exported from MusicPlayer
-
+import { ColorLinearProgress } from './MusicPlayer';
 const MusicControls = ({ isPlaying, togglePlay, skipBackward, skipForward, currentSong, progress, songDuration, handleProgressBarClick }) => {
   return (
     <>

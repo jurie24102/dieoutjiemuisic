@@ -1,14 +1,19 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Button,
-  Container, Box, Typography, LinearProgress, styled
+import {
+  Dialog,
+  Button,
+  Container,
+  Box,
+  Typography,
+  LinearProgress,
+  styled
  } from '@mui/material';
- import MusicControls from './MuisicControles';
 
 const ColorLinearProgress = styled(LinearProgress)({
-  color: '#ffff00', // Change this to the color you want
+  color: '#ffff00',
   '& .MuiLinearProgress-barColorPrimary': {
-    backgroundColor: '#ffff00', // Change this to the color you want
+    backgroundColor: '#ffff00',
   },
 });
 
@@ -171,14 +176,13 @@ const handleProgressBarClick = (event) => {
       title: 'Waardes - Dieoutjiemusic',
       cover: '/Dieoutjiemuisic.png',
     },
-    // Add more song objects here
   ];
 
   const playSong = (songIndex, startTime = 0, playImmediately = true) => {
   const audioElement = new Audio(songs[songIndex].url);
   audioElement.currentTime = startTime;
   audioElement.onloadedmetadata = () => {
-    setSongDuration(audioElement.duration); // Set song duration
+    setSongDuration(audioElement.duration);
   };
   if (playImmediately) {
     audioElement.play();
@@ -187,7 +191,7 @@ const handleProgressBarClick = (event) => {
   
   setCurrentSongIndex(songIndex);
   audioRef.current = audioElement;
-  setProgress(0); // Reset progress when changing the song
+  setProgress(0);
 };
 
   const togglePlay = () => {
@@ -218,8 +222,8 @@ const handleProgressBarClick = (event) => {
       audioRef.current.play();
       setIsPlaying(true);
     }
-    setProgress(0); // Reset progress
-    setSongDuration(0); // Reset song duration
+    setProgress(0);
+    setSongDuration(0);
   };
 
   const skipBackward = () => {
@@ -236,8 +240,8 @@ const handleProgressBarClick = (event) => {
     }
     playSong(currentSongIndex, 0);
   }
-  setProgress(0); // Reset progress
-  setSongDuration(0); // Reset song duration
+  setProgress(0);
+  setSongDuration(0);
 };
 
 useEffect(() => {
@@ -251,19 +255,19 @@ useEffect(() => {
   }, [isPlaying]);
 
 useEffect(() => {
-    const currentSongElement = document.getElementById(`song-${currentSongIndex}`);
+  const currentSongElement = document.getElementById(`song-${currentSongIndex}`);
 
-    if (currentSongElement) {
-      currentSongElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-  }, [currentSongIndex]);
+  if (currentSongElement) {
+    currentSongElement.scrollIntoView({ behavior: 'auto', block: 'nearest' });
+  }
+}, [currentSongIndex]);
 
   const handleSongClick = (songIndex) => {
   const isCurrentSong = currentSongIndex === songIndex;
   const audioElement = audioRef.current;
 
   if (audioElement && isPlaying && !isCurrentSong) {
-    audioElement.pause(); // Pause the current song if it's playing and not the clicked one
+    audioElement.pause();
     setIsPlaying(false);
   }
 
@@ -282,7 +286,7 @@ useEffect(() => {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '90vh', // Adjust the height as needed
+        height: '90vh',
         
       }}
     >
@@ -314,71 +318,72 @@ useEffect(() => {
       />
       <Box sx={{ width: '100%', mt: 3, height: '400px', overflowY: 'auto' }}>
       {songs.map((song, index) => (
-        <>
-  <Box
-    key={index} // Add the key prop here
-    sx={{
-      display: 'flex',
-      flexDirection: 'row',
-      alignItems: 'center',
-      mt: 1,
-    }}
-  >
+  <>
     <Box
-      id={`song-${index}`} // Add an id to each song element
+      key={index}
       sx={{
-        padding: 0.5,
-        bgcolor: currentSongIndex === index ? '#FFD600' : '#FF9900',
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        cursor: 'pointer',
-        flexGrow: 1,
-        width: '90%',
+        mt: 1,
       }}
-      onClick={() => handleSongClick(index)}
     >
-      <Image src={song.cover} alt="Song Cover" width={30} height={30} />
-      <Typography
+      <Box
+        id={`song-${index}`}
         sx={{
-          ml: 2,
-          fontSize: 14,
-          fontWeight: currentSongIndex === index ? 700 : 400,
-          color: 'black',
+          padding: 0.5,
+          bgcolor: currentSongIndex === index ? '#FFD600' : '#FF9900',
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+          cursor: 'pointer',
+          flexGrow: 1,
+          width: '90%',
+        }}
+        onClick={() => handleSongClick(index)}
+      >
+        <Image src={song.cover} alt="Song Cover" width={30} height={30} />
+        <Typography
+          sx={{
+            ml: 2,
+            fontSize: 14,
+            fontWeight: currentSongIndex === index ? 700 : 400,
+            color: 'black',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            maxWidth: 'calc(100% - 32px)', // Adjust as needed to fit other elements
+          }}
+        >
+          {song.title.length > 25 ? `${song.title.slice(0, 25)}...` : song.title}
+        </Typography>
+      </Box>
+      <Button
+        onClick={(e) => { 
+          e.preventDefault(); 
+          handleDownload(song.url, song.title); 
+        }}
+        id={`song-${index}`}
+        sx={{
+          minWidth: 'auto',
+          width: 40,
+          height: 40,
+          ml: 1,
+          mr: 1,
+          p: 0,
+          color: 'pink',
+          bgcolor: currentSongIndex === index ? '#FFD600' : '#FF9900',
+          border: '1px solid black',
+          '&:hover': {
+            backgroundColor: 'white',
+          },
         }}
       >
-        {song.title}
-      </Typography>
+        <Image src="/download.svg" alt="Download" width={20} height={20} />
+      </Button>
     </Box>
-    <Button
-  onClick={(e) => { 
-    e.preventDefault(); 
-    handleDownload(song.url, song.title); 
-  }}
-  id={`song-${index}`}
-  sx={{
-    minWidth: 'auto',
-    width: 40,
-    height: 40,
-    ml: 1,
-    mr: 1,
-    p: 0,
-    color: 'pink',
-    bgcolor: currentSongIndex === index ? '#FFD600' : '#FF9900',
-    border: '1px solid black',
-    // if hover make it white
-    '&:hover': {
-      backgroundColor: 'white',
-    },
-  }}
->
-  <Image src="/download.svg" alt="Download" width={20} height={20} />
-</Button>
-  </Box>
-  
-      </>
-  
+  </>
 ))}
+
 <Box
   sx={{
     textAlign: 'center',
