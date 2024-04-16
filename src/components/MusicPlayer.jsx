@@ -57,6 +57,16 @@ const handleProgressBarClick = (event) => {
 
   const songs = [
     {
+      url: '/songs/Babalas.mp3',
+      title: 'Babalas - Dieoutjiemusic',
+      cover: '/Dieoutjiemuisic.png',
+    },
+    {
+      url: '/songs/SEX-SO-GOOD.mp3',
+      title: 'SEX-SO-GOOD - Dieoutjiemusic',
+      cover: '/Dieoutjiemuisic.png',
+    },
+    {
       url: '/songs/Nee-Dankie.mp3',
       title: 'Nee Dankie - Dieoutjiemusic',
       cover: '/Dieoutjiemuisic.png',
