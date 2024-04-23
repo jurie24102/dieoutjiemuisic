@@ -301,7 +301,7 @@ useEffect(() => {
       }}
     >
       <Box mt={3}>
-        <Image src={songs[currentSongIndex].cover} alt="Album Cover" width={200} height={200} />
+        <Image src={songs[currentSongIndex].cover} alt="Album Cover" width={150} height={150} />
       </Box>
       <Box>{songs[currentSongIndex].title}</Box>
       <Box
