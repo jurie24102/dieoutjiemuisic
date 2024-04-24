@@ -1,4 +1,3 @@
-// VideoData.js
 const videos = [
   {
     title: 'Babalas',

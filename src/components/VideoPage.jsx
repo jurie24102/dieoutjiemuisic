@@ -1,6 +1,6 @@
 // VideoPage.js
 import React from 'react';
-import VideoCard from './VideoCard'; // Assuming VideoCard is in the same directory
+import VideoCard from './VideoCard';
 
 const VideoPage = () => {
   const videos = [

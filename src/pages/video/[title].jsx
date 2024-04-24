@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { Typography, Box, Grid } from '@mui/material';
-import videos from '../../components/VideoData'; // Import video data from VideoData.js
-import PlayArrowIcon from '@mui/icons-material/PlayArrow'; // Import the PlayArrow icon from MUI
+import videos from '../../components/VideoData';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
 const VideoPlayerPage = () => {
   const router = useRouter();
@@ -10,39 +10,33 @@ const VideoPlayerPage = () => {
   const [title, setTitle] = useState(initialTitle);
   const [videoSrc, setVideoSrc] = useState(`/videos/${encodeURIComponent(initialTitle)}.mp4`);
   const [selectedVideoIndex, setSelectedVideoIndex] = useState(null);
-  const [duration, setDuration] = useState(0); // State to hold video duration
+  const [duration, setDuration] = useState(0);
   const videoRef = useRef(null);
-  const [scrollPosition, setScrollPosition] = useState(0); // Store scroll position
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
-    // Set up event listener for when video metadata is loaded
     const handleMetadataLoaded = () => {
-      // Ensure videoRef.current is not null before accessing duration
       if (videoRef.current) {
-        // Update the state with the loaded duration
         setDuration(videoRef.current.duration);
       }
     };
 
-    // Add event listener
     if (videoRef.current) {
       videoRef.current.addEventListener('loadedmetadata', handleMetadataLoaded);
     }
 
-    // Remove event listener when component unmounts
     return () => {
       if (videoRef.current) {
         videoRef.current.removeEventListener('loadedmetadata', handleMetadataLoaded);
       }
     };
-  }, [videoRef]); // Dependency array to ensure effect runs only when videoRef changes
+  }, [videoRef]);
 
   const handleVideoClick = (newSrc, newTitle, index) => {
-    setScrollPosition(window.pageYOffset || document.documentElement.scrollTop); // Save scroll position
+    setScrollPosition(window.pageYOffset || document.documentElement.scrollTop);
     setVideoSrc(newSrc);
     setTitle(newTitle);
     setSelectedVideoIndex(index);
-    // Autoplay the video
     if (videoRef.current) {
       videoRef.current.play();
     }
@@ -66,7 +60,7 @@ const VideoPlayerPage = () => {
         <Grid item xs={12} md={12} lg={4}>
           <Box m={2} overflow="hidden" sx={{ border: "1px solid rgba(255, 255, 255, 0.5)", borderRadius: 2,  maxHeight: {xs: 330, md: 600} }}>
             <Box sx={{ height: 60, mb: 1, bgcolor: 'rgba(255, 255, 255, 0.3)', borderTopLeftRadius: 2, borderTopRightRadius: 2}}>
-            <Typography variant='h6' color={'white'} pl={2} pt={2} sx={{ }}>Dieoutjiemuisic Muisic Videos</Typography>
+            <Typography variant='h6' color={'white'} pl={2} pt={2}>Dieoutjiemuisic Muisic Videos</Typography>
             </Box>
             {videos.map((video, index) => (
               <Box key={index} py={1} onClick={() => handleVideoClick(video.url, video.title, index)} sx={{ pl: selectedVideoIndex === index ? 1 : 4, display: "flex", flexDirection: "row", alignItems: "center", backgroundColor: selectedVideoIndex === index ? 'rgba(255, 255, 255, 0.2)' : 'transparent', width: '100%', overflow: 'hidden', cursor: 'pointer', position: "relative", '&:hover': { backgroundColor: 'rgba(255, 255, 255, 0.1)' } }}>
