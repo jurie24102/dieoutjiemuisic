@@ -64,7 +64,7 @@ const VideoPlayerPage = () => {
           </Box>
         </Grid>
         <Grid item xs={12} md={12} lg={4}>
-          <Box m={2} overflow="auto" sx={{ border: "1px solid rgba(255, 255, 255, 0.5)", borderRadius: 2,  maxHeight: {xs: 330, md: 600} }}>
+          <Box m={2} overflow="hidden" sx={{ border: "1px solid rgba(255, 255, 255, 0.5)", borderRadius: 2,  maxHeight: {xs: 330, md: 600} }}>
             <Box sx={{ height: 60, mb: 1, bgcolor: 'rgba(255, 255, 255, 0.3)', borderTopLeftRadius: 2, borderTopRightRadius: 2}}>
             <Typography variant='h6' color={'white'} pl={4} pt={2} sx={{ }}>Dieoutjiemuisic Muisic Videos</Typography>
             </Box>
