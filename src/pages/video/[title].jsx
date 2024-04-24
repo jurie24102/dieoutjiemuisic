@@ -66,7 +66,7 @@ const VideoPlayerPage = () => {
         <Grid item xs={12} md={12} lg={4}>
           <Box m={2} overflow="hidden" sx={{ border: "1px solid rgba(255, 255, 255, 0.5)", borderRadius: 2,  maxHeight: {xs: 330, md: 600} }}>
             <Box sx={{ height: 60, mb: 1, bgcolor: 'rgba(255, 255, 255, 0.3)', borderTopLeftRadius: 2, borderTopRightRadius: 2}}>
-            <Typography variant='h6' color={'white'} pl={4} pt={2} sx={{ }}>Dieoutjiemuisic Muisic Videos</Typography>
+            <Typography variant='h6' color={'white'} pl={2} pt={2} sx={{ }}>Dieoutjiemuisic Muisic Videos</Typography>
             </Box>
             {videos.map((video, index) => (
               <Box key={index} py={1} onClick={() => handleVideoClick(video.url, video.title, index)} sx={{ pl: selectedVideoIndex === index ? 1 : 4, display: "flex", flexDirection: "row", alignItems: "center", backgroundColor: selectedVideoIndex === index ? 'rgba(255, 255, 255, 0.2)' : 'transparent', width: '100%', overflow: 'hidden', cursor: 'pointer', position: "relative", '&:hover': { backgroundColor: 'rgba(255, 255, 255, 0.1)' } }}>
