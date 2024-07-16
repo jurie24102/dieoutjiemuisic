@@ -57,6 +57,11 @@ const handleProgressBarClick = (event) => {
 
   const songs = [
     {
+      url: '/songs/INCREDIBLE.mp3',
+      title: 'INCREDIBLE - Dieoutjiemusic',
+      cover: '/Dieoutjiemuisic.png',
+    },
+    {
       url: '/songs/Babalas.mp3',
       title: 'Babalas - Dieoutjiemusic',
       cover: '/Dieoutjiemuisic.png',
