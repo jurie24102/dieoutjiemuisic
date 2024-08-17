@@ -59,7 +59,7 @@ const handleProgressBarClick = (event) => {
     {
       url: '/songs/PASOPA.mp3',
       title: 'PASOPA - Dieoutjiemusic',
-      cover: '/Dieoutjiemuisic.png',
+      cover: '/passopa-bg.png',
     },
     {
       url: '/songs/Moment-Remix.mp3',
