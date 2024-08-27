@@ -57,6 +57,11 @@ const handleProgressBarClick = (event) => {
 
   const songs = [
     {
+      url: '/songs/BITTERLIEF-VEJO-OUTJIE.mp3',
+      title: 'BITTERLIEF VEJO OUTJIE - Dieoutjiemusic',
+      cover: '/Dieoutjiemuisic.png',
+    },
+    {
       url: '/songs/PASOPA.mp3',
       title: 'PASOPA - Dieoutjiemusic',
       cover: '/passopa-bg.png',
