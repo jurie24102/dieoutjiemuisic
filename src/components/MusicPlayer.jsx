@@ -66,15 +66,15 @@ const handleProgressBarClick = (event) => {
       title: 'PASOPA - Dieoutjiemusic',
       cover: '/passopa-bg.png',
     },
-    {
-      url: '/songs/Moment-Remix.mp3',
-      title: 'Moment-Remix - Dieoutjiemusic',
-      cover: '/Dieoutjiemuisic.png',
-    },
+    // {
+    //   url: '/songs/Moment-Remix.mp3',
+    //   title: 'Moment-Remix - Dieoutjiemusic',
+    //   cover: '/Dieoutjiemuisic.png',
+    // },
     {
       url: '/songs/MoMent.mp3',
       title: 'MoMent - Dieoutjiemusic',
-      cover: '/Dieoutjiemuisic.png',
+      cover: '/moment.png',
     },
     {
       url: '/songs/INCREDIBLE.mp3',
