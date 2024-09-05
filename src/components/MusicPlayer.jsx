@@ -56,6 +56,11 @@ const handleProgressBarClick = (event) => {
 };
 
   const songs = [
+  {
+      url: '/songs/tot-die-einde.mp3',
+      title: 'tot die einde - Dieoutjiemusic',
+      cover: '/Dieoutjiemuisic.png',
+    },
     {
       url: '/songs/BITTERLIEF-VEJO-OUTJIE.mp3',
       title: 'BITTERLIEF VEJO OUTJIE - Dieoutjiemusic',
