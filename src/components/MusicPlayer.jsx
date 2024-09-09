@@ -56,7 +56,12 @@ const handleProgressBarClick = (event) => {
 };
 
   const songs = [
-  {
+    {
+      url: '/songs/sexyy-baby.mp3',
+      title: 'sexyy baby - Dieoutjiemusic',
+      cover: '/Dieoutjiemuisic.png',
+    },
+    {
       url: '/songs/tot-die-einde.mp3',
       title: 'tot die einde - Dieoutjiemusic',
       cover: '/Dieoutjiemuisic.png',
