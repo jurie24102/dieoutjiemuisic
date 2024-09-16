@@ -1,6 +1,7 @@
 import TopNav from '../components/TopNav';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Head from 'next/head';
+import '../styles/globals.css';
 
 const theme = createTheme();
 
