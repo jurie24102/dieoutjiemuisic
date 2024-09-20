@@ -1,5 +1,10 @@
 const songs = [
     {
+      url: '/songs/bekostig.mp3',
+      title: 'bekostig - Dieoutjiemusic',
+      cover: '/bekostig.png',
+    },
+    {
       url: '/songs/sexyy-baby.mp3',
       title: 'sexyy baby - Dieoutjiemusic',
       cover: '/Dieoutjiemuisic.png',
